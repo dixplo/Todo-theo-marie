@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import Spring.todo.ds.models.Todo;
+import Spring.todo.ds.models.Todos;
 import s4.spring.todo.repositories.TodoRepository;
 
 @RestController
@@ -30,13 +30,13 @@ public class RestTodoController {
 	private TodoRepository todoRepository;
 	
 	@GetMapping("d")
-	public @ResponseBody List<Todo> read(){
+	public @ResponseBody List<Todos> read(){
 		return todoRepository.findAll();
 	}
 	
 	@GetMapping("{id}")
-	public @ResponseBody Todo read(@PathVariable int id){
-		Optional<Todo> opt=todoRepository.findById(id);
+	public @ResponseBody Todos read(@PathVariable int id){
+		Optional<Todos> opt=todoRepository.findById(id);
 		if(opt.isPresent()) {
 			return opt.get();
 		}
@@ -44,13 +44,13 @@ public class RestTodoController {
 	}
 	
 	@PostMapping("create")
-	public @ResponseBody Todo create(@RequestBody Todo todoObject) {
+	public @ResponseBody Todos create(@RequestBody Todos todoObject) {
 		todoRepository.save(todoObject);
 		return todoObject;
 	}
 	
 	@PutMapping("update")
-	public @ResponseBody Todo update(@RequestBody Todo todoObject) {
+	public @ResponseBody Todos update(@RequestBody Todos todoObject) {
 		todoRepository.save(todoObject);
 		return todoObject;
 	}

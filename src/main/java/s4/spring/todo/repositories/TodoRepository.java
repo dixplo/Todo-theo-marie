@@ -6,13 +6,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import Spring.todo.ds.models.Todo;
+import Spring.todo.ds.models.Todos;
 
 
 
 
-public interface TodoRepository extends JpaRepository<Todo,Integer > {
+public interface TodoRepository extends JpaRepository<Todos,Integer > {
 	
-	public List<Todo> findAllOrderBypoidsAsc();
+	public List<Todos> findAllOrderBypoidsAsc();
 	
 }

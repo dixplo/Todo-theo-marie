@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Todo {
+public class Todos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
