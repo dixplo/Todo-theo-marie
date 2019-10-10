@@ -23,13 +23,13 @@ import Spring.todo.ds.models.Todo;
 import s4.spring.todo.repositories.TodoRepository;
 
 @RestController
-@RequestMapping("/rest/todo")
+@RequestMapping("/rest/")
 public class RestTodoController {
 	
 	@Autowired
 	private TodoRepository todoRepository;
 	
-	@GetMapping("")
+	@GetMapping("d")
 	public @ResponseBody List<Todo> read(){
 		return todoRepository.findAll();
 	}

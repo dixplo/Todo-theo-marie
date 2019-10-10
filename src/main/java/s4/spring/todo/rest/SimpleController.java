@@ -15,7 +15,7 @@ import Spring.todo.ds.models.Todo;
 import s4.spring.todo.repositories.TodoRepository;
 
 @Controller
-@RequestMapping("/simple/")
+@RequestMapping("o/")
 public class SimpleController {
 
 	@GetMapping("hello/")
@@ -28,7 +28,7 @@ public class SimpleController {
 	public String displayorganization(ModelMap model) {
 		List<Todo> todoObject=todoRepository.findAll();
 		model.put("index",todoObject);
-		return "index";
+		return "hello";
 	}
 	
 	@Autowired
